@@ -84,7 +84,6 @@ class KernelFun(Kernel):
         dt = get_dt(t)
         support_start = int((self.support[0] - t[0]) / dt)
         support_end = int(np.ceil((self.support[1] - t[0]) / dt))
-        print(support_end, len(t))
 
         if support_start > 0:
             basis_values = basis_values[support_start:]
