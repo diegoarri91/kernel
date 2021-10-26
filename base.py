@@ -63,7 +63,7 @@ class Kernel:
         self.values = self.evaluate(t_support)
         return self
     
-    def convolve_continuous(self, t, x, mode='fft'):
+    def convolve(self, t, x, mode='fft'):
         """
         Implements the convolution of signal x with the kernel. Given a 1d-array t and an nd-array x with
         x.shape=(len(t),...) returns convolution, the convolution of the kernel with axis 0 of x for all other axis
@@ -103,7 +103,7 @@ class Kernel:
         return convolution
 
     def correlate_continuous(self, t, I, mode='fft'):
-        return self.convolve_continuous(t, I[::-1], mode=mode)[::-1]
+        return self.convolve(t, I[::-1], mode=mode)[::-1]
 
     def fit(self, t, I, v, mask=None):
 

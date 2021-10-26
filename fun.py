@@ -20,7 +20,7 @@ class KernelFun(Kernel):
     def area(self, dt):
         return np.sum(self.evaluate(np.arange(self.support[0], self.support[1] + dt, dt))) * dt
 
-    def convolve_basis_continuous(self, t, I):
+    def convolve_basis(self, t, I):
         """# Given a 1d-array t and an nd-array x with x.shape=(len(t),...) returns X_te,
         # the convolution matrix of each rectangular function of the base with axis 0 of x for all other axis values
         # so that X_te.shape = (x.shape, nbasis)
